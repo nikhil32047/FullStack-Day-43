@@ -1,0 +1,38 @@
+Day 43:
+===========
+
+a) Pickling (Packing)
+=============================
+Pickling is the process of converting a Python object into a byte stream so it can be stored in a file or transferred over a network.
+Python provides the pickle module for this purpose.
+
+Example:
+import pickle
+
+data = {"name": "Nikhil", "age": 22}
+
+with open("data.pkl", "wb") as f:
+    pickle.dump(data, f)
+
+Key Points:
+Stores complex objects (lists, dicts, objects)
+File opened in binary write (wb) mode
+Used for object persistence
+
+
+b) Unpickling (Unpacking)
+================================
+Unpickling is the process of converting the byte stream back into the original Python object.
+
+Example:
+import pickle
+
+with open("data.pkl", "rb") as f:
+    obj = pickle.load(f)
+
+print(obj)
+
+Key Points:
+File opened in binary read (rb) mode
+Restores original object structure
+⚠️ Avoid unpickling data from untrusted sources
